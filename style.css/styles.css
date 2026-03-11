@@ -33,48 +33,102 @@ ul li a:hover {
   background-color: #111111;
 }
 
-/* Css du footer */
-.naviguation {
-  
-  flex:1;
-  max-width: 15%;
-  display: flex;
-  align-items: center;
-  height: auto;
-  padding: 10px;
-  border-right: #111111 solid 1px;
-}
+
 /* Css du div qui contient le titre et l'image du chat sur accueil */
 .accueil-container {
-  display: flex;
+  display: flex;      /* ← affiche les enfants côte à côte */
   flex: 1;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
   padding: 20px;
 }
 
-.Titre {
+
+
+/* Css de la barre de naviguation qui se trouve à gauche de la liste des matchs */
+.navigation {
+  
+  
+  max-width: 15%;
+  align-items: center;
+  height:100%;
+  padding: 10px;
+  border-right: #111111 solid 1px;
+}
+.Affichage_Principal{
   flex: 1;
 }
-/* Css du div qui contient l'image du chat sur accueil */
-.ChatFoot {
-  flex: 0 0 auto;
+.Titre {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Css de la liste des matchs */
+.match-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+  background-color: transparent;
+}
+
+.match-item a {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #ddd;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  height: 100%;
 }
-/* Css de l'image du chat */
-.ChatFootImage {
-  width: 300px;
-  height: auto;
-  
+
+.match-item a:hover {
+  background-color: #e8e8e8;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
+
+.match-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.match-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.match-equipes {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.match-date {
+  font-size: 0.85em;
+  color: #666;
+}
+
 /* Css du footer */
 footer {
   border:1px;
-  margin-top: auto;
   width: 100%;
   background: #373d37;
   color: white;
   text-align: center;
   padding: 10px 0;
+}
+footer a {
+  color: #f5f5f5;
+  text-decoration: underline;
 }

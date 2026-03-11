@@ -1,5 +1,7 @@
 <?php
     include 'fonction.php';
+    $equipe_1= urldecode($_GET['equipe1']);
+    $equipe_2= urldecode($_GET['equipe2']);     
 
 ?>
 
@@ -20,23 +22,14 @@
     <header>
         <nav class="menu">
             <ul>
-                <li><a href="Index.php">Accueil</a></li>
+            <li><a href="Index.php">Accueil</a></li>
                 <li><a href="Profil.html">Profil</a></li>
             </ul>
         </nav>
     </header>
-    <h1 class="Titre">Bienvenue sur notre site de prédiction de match de football !</h1>
-
+    <h1 class="Titre">Match : <?php echo $equipe_1; ?> vs <?php echo $equipe_2; ?></h1>
     <div class="accueil-container">
-        <div class="navigation">
-            <p>Explorez les différentes sections pour découvrir les dernières tendances et analyses pour vos équipes
-                préférées.</p>
-                
-        </div>
-        <div class="Affichage_Principal">
-            <p class="rainbow-text">Découvrez les dernières tendances et analyses pour vos équipes préférées.</p>
-            <?php afficherMatch(); ?>
-        </div>
+        
     </div>
         
     <footer id="Contact">
