@@ -1,0 +1,80 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+ul li {
+  float: left;
+}
+
+ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #111111;
+}
+
+/* Css du footer */
+.naviguation {
+  
+  flex:1;
+  max-width: 15%;
+  display: flex;
+  align-items: center;
+  height: auto;
+  padding: 10px;
+  border-right: #111111 solid 1px;
+}
+/* Css du div qui contient le titre et l'image du chat sur accueil */
+.accueil-container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.Titre {
+  flex: 1;
+}
+/* Css du div qui contient l'image du chat sur accueil */
+.ChatFoot {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-end;
+}
+/* Css de l'image du chat */
+.ChatFootImage {
+  width: 300px;
+  height: auto;
+  
+}
+/* Css du footer */
+footer {
+  border:1px;
+  margin-top: auto;
+  width: 100%;
+  background: #373d37;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
