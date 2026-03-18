@@ -1,13 +1,9 @@
-<?php
-    include 'fonction.php';
-
-?>
-
-
 
 <!DOCTYPE html>
 <html lang="fr">
-
+<?php
+    include 'fonction.php';
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,14 +13,7 @@
 </head>
 
 <body>
-    <header>
-        <nav class="menu">
-            <ul>
-                <li><a href="Index.php">Accueil</a></li>
-                <li><a href="Profil.html">Profil</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include 'header.php'; ?>
     <h1 class="Titre">Bienvenue sur notre site de prédiction de match de football !</h1>
 
     <div class="accueil-container">
@@ -38,12 +27,8 @@
             <?php afficherMatch(); ?>
         </div>
     </div>
-        
-    <footer id="Contact">
-        <p> Tous droits réservés.</p>
-        <p>Contactez-nous : <a href="mailto:contact@predictionmatch.fr">contact@predictionmatch.fr</a></p>
-        <p>Autheur de ce site : Anthony HERVE et Mohamed Ali SHAIEK</p>
-    </footer>
+    <?php include 'footer.php'; ?>
+    
 </body>
 
 

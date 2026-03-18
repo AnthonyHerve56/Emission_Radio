@@ -1,7 +1,7 @@
 <?php
     include 'fonction.php';
-    $equipe_1= urldecode($_GET['equipe1']);
-    $equipe_2= urldecode($_GET['equipe2']);     
+    $equipe_1= htmlspecialchars(urldecode($_GET['equipe1']));
+    $equipe_2= htmlspecialchars(urldecode($_GET['equipe2']));     
 
 ?>
 
