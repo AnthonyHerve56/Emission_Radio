@@ -1,7 +1,7 @@
 <!-- Page Accueil : a inclure dans les pages avec include 'header.php' -->
 
 
-<h1 class="Titre">Bienvenue sur notre site de prédiction de match de football !</h1>
+<h1 class="Titre">Bienvenue sur notre site de prédiction de match de pawball !</h1>
 
 <div class="accueil-container">
     <div class="navigation">
