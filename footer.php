@@ -1,4 +1,6 @@
-<link rel="stylesheet" href="./style.css/styles.css">
+<!-- Footer reutilisable : a inclure dans les pages avec include 'footer.php' -->
+
+
 
 <footer id="Contact">
         <p> Tous droits réservés.</p>
