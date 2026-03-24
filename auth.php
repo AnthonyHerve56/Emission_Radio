@@ -1,6 +1,5 @@
 <?php
 // Parametres de connexion MySQL (EasyPHP local).
-// A adapter selon ton environnement.
 $dbHost = '127.0.0.1';
 $dbName = 'db_prediction';
 $dbUser = 'root';
@@ -61,6 +60,7 @@ if ($stmt) {
     if ($isValid) {
         // Cookies simples de session "persistante" (7 jours).
         // Ils servent a afficher l'etat connecte et des infos utilisateur.
+        setcookie('user_id', (string) $user['parieur_id'], time() + (7 * 24 * 60 * 60), '/');
         setcookie('user_email', $user['parieur_email'], time() + (7 * 24 * 60 * 60), '/');
         setcookie('user_pseudo', $user['parieur_pseudo'], time() + (7 * 24 * 60 * 60), '/');
         setcookie('is_logged_in', '1', time() + (7 * 24 * 60 * 60), '/');

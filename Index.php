@@ -1,5 +1,6 @@
 <?php
 if (isset($_GET['logout']) && $_GET['logout'] === '1') {
+    setcookie('user_id', '', time() - 3600, '/');
     setcookie('user_email', '', time() - 3600, '/');
     setcookie('user_pseudo', '', time() - 3600, '/');
     setcookie('is_logged_in', '', time() - 3600, '/');
