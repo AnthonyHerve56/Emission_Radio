@@ -233,7 +233,8 @@ footer a {
 .entity-card-image {
   width: 100%;
   aspect-ratio: 1 / 1;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
   background: #eef4f1;
 }
 

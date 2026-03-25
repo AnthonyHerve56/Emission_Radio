@@ -1,17 +1,12 @@
-<!-- Page Menace : liste en cartes avec image + nom -->
-
 <?php
-// Variables de la page.
 $errorMessage = '';
 $menaces = array();
 
-// Connexion a MySQL.
 $connection = getDbConnection();
 
 if ($connection === null) {
     $errorMessage = "Connexion a la base impossible. Verifiez vos parametres MySQL dans fonction.php.";
 } else {
-    // Recuperation des menaces par ordre alphabetique.
     $menaces = getMenacesOrderedByName($connection);
 
     if ($menaces === false) {
@@ -19,7 +14,6 @@ if ($connection === null) {
         $menaces = array();
     }
 
-    // On ferme la connexion apres la lecture.
     $connection->close();
 }
 ?>

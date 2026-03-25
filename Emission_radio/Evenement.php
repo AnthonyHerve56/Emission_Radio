@@ -1,26 +1,19 @@
-<!-- Page Evenement : liste des evenements en ordre chronologique decroissant -->
-
 <?php
-// Variables d'etat de la page.
 $errorMessage = '';
 $evenements = array();
 
-// Connexion BDD.
 $connection = getDbConnection();
 
 if ($connection === null) {
     $errorMessage = "Connexion a la base impossible. Verifiez vos parametres MySQL dans fonction.php.";
 } else {
-    // Recuperation des evenements les plus recents en premier.
     $evenements = getEvenementsOrderedDesc($connection);
 
     if ($evenements === false) {
-        // Echec SQL: message explicite + tableau vide.
         $errorMessage = "Impossible de recuperer les evenements depuis la table evenement.";
         $evenements = array();
     }
 
-    // Fermeture propre de la connexion.
     $connection->close();
 }
 ?>
@@ -31,7 +24,7 @@ if ($connection === null) {
         <a class="btn-add" href="?page=evenement_form">+ Ajouter</a>
     </div>
 
-    <p class="emission-intro">Nombre d'évènements repportés : <?php echo count($evenements); ?></p>
+    <p class="emission-intro">Nombre d'evenements : <?php echo count($evenements); ?></p>
 
     <div class="emission-table-wrapper">
         <table class="emission-table">
@@ -45,7 +38,6 @@ if ($connection === null) {
                 </tr>
             </thead>
             <tbody>
-                <!-- Gestion des 3 cas: erreur, vide, donnees -->
                 <?php if (!empty($errorMessage)): ?>
                     <tr>
                         <td colspan="5"><?php echo htmlspecialchars($errorMessage); ?></td>

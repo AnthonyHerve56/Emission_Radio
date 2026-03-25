@@ -1,5 +1,3 @@
-<!-- Page detail Victime -->
-
 <?php
 $errorMessage = '';
 $victime = null;

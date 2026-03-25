@@ -1,5 +1,3 @@
-<!-- Page detail Menace -->
-
 <?php
 $errorMessage = '';
 $menace = null;
