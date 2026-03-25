@@ -31,6 +31,9 @@ if (isset($_GET['logout']) && $_GET['logout'] === '1') {
         if($_GET['page'] == 'login'){
             include 'login.php';
         }
+        else if($_GET['page'] == 'register'){
+            include 'register.php';
+        }
          else if($_GET['page'] == 'match'){
             include 'match.php';
         }

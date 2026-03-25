@@ -1,6 +1,7 @@
 <?php
 $savedEmail = isset($_COOKIE['user_email']) ? htmlspecialchars($_COOKIE['user_email']) : '';
 $loginError = isset($_GET['error']) && $_GET['error'] === '1';
+$registeredSuccess = isset($_GET['registered']) && $_GET['registered'] === '1';
 ?>
 
 <div class="login-container">
@@ -8,6 +9,10 @@ $loginError = isset($_GET['error']) && $_GET['error'] === '1';
 
     <?php if ($loginError): ?>
         <p class="login-error">Email ou mot de passe incorrect.</p>
+    <?php endif; ?>
+
+    <?php if ($registeredSuccess): ?>
+        <p class="login-status">Inscription reussie. Connectez-vous avec votre compte.</p>
     <?php endif; ?>
 
     <?php if ($savedEmail !== ''): ?>
@@ -27,4 +32,6 @@ $loginError = isset($_GET['error']) && $_GET['error'] === '1';
 
         <button type="submit" class="btn-login">Se connecter</button>
     </form>
+
+    <p class="auth-switch-link">Pas encore de compte ? <a href="Index.php?page=register">Creer un compte</a></p>
 </div>

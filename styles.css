@@ -207,6 +207,15 @@ footer a {
   margin: 0 0 12px 0;
 }
 
+.auth-switch-link {
+  margin-top: 12px;
+}
+
+.auth-switch-link a {
+  color: #111111;
+  font-weight: bold;
+}
+
 /* Css de la page profil */
 .profil-container {
   flex: 1;

@@ -51,8 +51,13 @@ if ($stmt) {
     $isValid = false;
     if ($user) {
         $storedPassword = (string) $user['parieur_mdp'];
+        $sha1Password = sha1($password);
 
-        if (password_verify($password, $storedPassword) || hash_equals($storedPassword, $password)) {
+        if (
+            password_verify($password, $storedPassword)
+            || hash_equals($storedPassword, $password)
+            || hash_equals($storedPassword, $sha1Password)
+        ) {
             $isValid = true;
         }
     }
