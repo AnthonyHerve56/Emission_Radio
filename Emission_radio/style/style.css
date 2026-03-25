@@ -412,3 +412,37 @@ footer a {
     padding: 16px;
   }
 }
+
+.banniere-accueil {
+    width: 90%;
+    margin: 20px auto 25px auto;
+    text-align: center;
+}
+
+.banniere-accueil img {
+    width: 100%;
+    max-width: 1100px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+.bloc-accueil {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.bloc-accueil h2 {
+    margin-bottom: 12px;
+    color: #1f2937;
+}
+
+.bloc-accueil p {
+    margin-bottom: 12px;
+    line-height: 1.7;
+    color: #444;
+}

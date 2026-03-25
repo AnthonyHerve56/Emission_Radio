@@ -38,11 +38,17 @@
         else if($_GET['page'] == 'menace'){
             include 'Menace.php';
         }
+        else if($_GET['page'] == 'menace_detail'){
+            include 'MenaceDetail.php';
+        }
         else if($_GET['page'] == 'menace_form'){
             include 'MenaceForm.php';
         }
         else if($_GET['page'] == 'victime'){
             include 'Victime.php';
+        }
+        else if($_GET['page'] == 'victime_detail'){
+            include 'VictimeDetail.php';
         }
         else if($_GET['page'] == 'victime_form'){
             include 'VictimeForm.php';

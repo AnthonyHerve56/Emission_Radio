@@ -47,7 +47,7 @@ if ($connection === null) {
                 $imagePath = './img/' . $imageName . '.png';
                 ?>
                 <!-- Carte cliquable: l'ID peut servir plus tard pour une page detail victime -->
-                <a class="entity-card" href="?page=victime&victime_id=<?php echo urlencode($victime['victime_id']); ?>">
+                <a class="entity-card" href="?page=victime_detail&victime_id=<?php echo urlencode($victime['victime_id']); ?>">
                     <img class="entity-card-image" src="<?php echo htmlspecialchars($imagePath); ?>" alt="<?php echo htmlspecialchars($victime['victime_nom'] . ' ' . $victime['victime_prenom']); ?>">
                     <h2 class="entity-card-title"><?php echo htmlspecialchars($victime['victime_nom'] . ' ' . $victime['victime_prenom']); ?></h2>
                 </a>

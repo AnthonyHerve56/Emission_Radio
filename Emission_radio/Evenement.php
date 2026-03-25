@@ -57,7 +57,6 @@ if ($connection === null) {
                 <?php else: ?>
                     <?php foreach ($evenements as $evenement): ?>
                         <tr>
-                            <!-- Protection XSS avec htmlspecialchars sur toutes les colonnes -->
                             <td><?php echo htmlspecialchars($evenement['evenement_id']); ?></td>
                             <td><?php echo htmlspecialchars(date('d/m/Y', strtotime($evenement['evenement_date']))); ?></td>
                             <td><?php echo htmlspecialchars($evenement['evenement_lieu']); ?></td>

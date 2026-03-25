@@ -1,4 +1,4 @@
-<!-- Page Menace : liste en cartes cliquables avec image + nom -->
+<!-- Page Menace : liste en cartes avec image + nom -->
 
 <?php
 // Variables de la page.
@@ -40,13 +40,10 @@ if ($connection === null) {
         <div class="entity-grid">
             <?php foreach ($menaces as $menace): ?>
                 <?php
-                // Le nom de l'image est derive automatiquement du nom de la menace.
-                // Exemple: "Demogorgon Alpha" => "./img/demogorgon_alpha.png"
                 $imageName = normalizeImageName($menace['menace_nom']);
                 $imagePath = './img/' . $imageName . '.png';
                 ?>
-                <!-- Carte cliquable: plus tard, l'ID pourra ouvrir un detail de menace -->
-                <a class="entity-card" href="?page=menace&menace_id=<?php echo urlencode($menace['menace_id']); ?>">
+                <a class="entity-card" href="?page=menace_detail&menace_id=<?php echo urlencode($menace['menace_id']); ?>">
                     <img class="entity-card-image" src="<?php echo htmlspecialchars($imagePath); ?>" alt="<?php echo htmlspecialchars($menace['menace_nom']); ?>">
                     <h2 class="entity-card-title"><?php echo htmlspecialchars($menace['menace_nom']); ?></h2>
                 </a>

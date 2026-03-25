@@ -97,7 +97,7 @@ function getMenacesOrderedByName($connection)
 
 function getVictimesOrderedByName($connection)
 {
-	// Tri par nom puis prenom pour rester intuitif cote utilisateur.
+	// Tri par nom puis prenom
 	$sql = "SELECT victime_id, victime_nom, victime_prenom, victime_ecole, evenement_id FROM victime ORDER BY victime_nom ASC, victime_prenom ASC";
 	$result = $connection->query($sql);
 
@@ -127,7 +127,6 @@ function normalizeImageName($text)
 	$text = strtolower($text);
 	$translit = @iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $text);
 
-	// Si iconv fonctionne, on utilise la version translitteree.
 	if ($translit !== false) {
 		$text = strtolower($translit);
 	}
@@ -259,5 +258,66 @@ function getMenacesForCombo($connection)
 	$result->free();
 
 	return $menaces;
+}
+
+function getMenaceById($connection, $menace_id)
+{
+	// Fiche detail d'une menace.
+	$stmt = $connection->prepare("SELECT menace_id, menace_nom, menace_taille, menace_poids FROM menace WHERE menace_id = ? LIMIT 1");
+
+	if ($stmt === false) {
+		return false;
+	}
+
+	$stmt->bind_param('i', $menace_id);
+
+	if (!$stmt->execute()) {
+		$stmt->close();
+		return false;
+	}
+
+	$result = $stmt->get_result();
+	$menace = $result->fetch_assoc();
+	$stmt->close();
+
+	if ($menace === null) {
+		return null;
+	}
+
+	return $menace;
+}
+
+function getVictimeById($connection, $victime_id)
+{
+	// Fiche detail d'une victime avec infos evenement associe.
+	$sql = "SELECT v.victime_id, v.victime_nom, v.victime_prenom, v.victime_ecole, v.evenement_id,
+				e.evenement_lieu, e.evenement_date
+			FROM victime v
+			LEFT JOIN evenement e ON e.evenement_id = v.evenement_id
+			WHERE v.victime_id = ?
+			LIMIT 1";
+
+	$stmt = $connection->prepare($sql);
+
+	if ($stmt === false) {
+		return false;
+	}
+
+	$stmt->bind_param('i', $victime_id);
+
+	if (!$stmt->execute()) {
+		$stmt->close();
+		return false;
+	}
+
+	$result = $stmt->get_result();
+	$victime = $result->fetch_assoc();
+	$stmt->close();
+
+	if ($victime === null) {
+		return null;
+	}
+
+	return $victime;
 }
 
