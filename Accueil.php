@@ -10,7 +10,13 @@
 
     </div>
     <div class="Affichage_Principal">
-        <p class="rainbow-text">Découvrez les dernières tendances et analyses pour vos équipes préférées.</p>
+        <p>Bienvenue sur notre plateforme de prédictions de matchs !
+
+Ici, vous pouvez tester vos connaissances pawballistiques en pronostiquant les résultats des matchs à venir. Choisissez vos équipes, entrez vos scores et comparez vos performances avec celles des autres joueurs.
+
+Que vous soyez un expert du ballon rond ou simplement là pour vous amuser, ce site vous permet de suivre vos prédictions et de grimper dans le classement au fil des matchs.
+
+À vous de jouer ⚽🔥</p>
         <?php afficherMatch(); ?>
     </div>
 </div>
